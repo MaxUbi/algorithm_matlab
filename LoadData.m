@@ -1,4 +1,4 @@
-global DATA V
+global DATA V ROOT_PATH  DATA_SETS_TO_USE
 DATA = cell(1,length(DATA_SETS_TO_USE));
 count = 1;
 for i = DATA_SETS_TO_USE
@@ -22,7 +22,7 @@ for i = DATA_SETS_TO_USE
     
     
     if exist(mp_test, 'file')
-        load(mp_train,'d_test')
+        load(mp_test,'d_test')
     else
         d_test = LoadData_csvread(p_test);
         save(mp_test,'d_test');
