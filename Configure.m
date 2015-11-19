@@ -3,7 +3,7 @@ global ROOT_PATH DATA_SETS_TO_USE V CACHE
 
 %%
 ROOT_PATH = '~/Documents/WorkSpace/Course/Advance Software Engineering/Algorithm';
-DATA_SETS_TO_USE = [6];
+DATA_SETS_TO_USE = [1];
 CACHE = true;
 
 

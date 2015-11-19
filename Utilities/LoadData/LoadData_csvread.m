@@ -22,7 +22,7 @@ try
                 for j = 2:length(d)
                     remaped_class_name = LoadData_remapClass(d{j});
                     if(remaped_class_name)                    
-                        result.label{j-1} = d{j};
+                        result.label{j-1} = remaped_class_name;
                     end
                 end
             else
@@ -35,6 +35,9 @@ try
             offset = offset + 1;
         end
     end
+    
+    result = LoadData_filter(result);
+    
     
 catch er
     er
