@@ -1,4 +1,4 @@
-global DATA V ROOT_PATH  DATA_SETS_TO_USE
+global DATA V ROOT_PATH  DATA_SETS_TO_USE CACHE
 DATA = cell(1,length(DATA_SETS_TO_USE));
 count = 1;
 for i = DATA_SETS_TO_USE
@@ -13,7 +13,7 @@ for i = DATA_SETS_TO_USE
     mp_test = strcat(p_test, V.mat_suffix);
     
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-    if exist(mp_train, 'file')        
+    if exist(mp_train, 'file') && CACHE       
         load(mp_train,'d_train')
     else
         d_train = LoadData_csvread(p_train);
@@ -21,7 +21,7 @@ for i = DATA_SETS_TO_USE
     end
     
     
-    if exist(mp_test, 'file')
+    if exist(mp_test, 'file') && CACHE
         load(mp_test,'d_test')
     else
         d_test = LoadData_csvread(p_test);
@@ -35,4 +35,4 @@ end
 
 
 
-clear 'count' 'p_train' 'p_test' 'd_train' 'd_test'
+clear 'count' 'p_train' 'p_test' 'd_train' 'd_test' 'mp_train' 'mp_test'

@@ -7,8 +7,9 @@ if strcmp(fields,'all') == 1
 end
 
 r = false;
+x = strtrim(field);
 for i = 1:length(fields)
-    if(strcmp(fields{i},strtrim(field)) == 1)
+    if(strcmp(fields{i},x) == 1)
         r = true;
         break;
     end
